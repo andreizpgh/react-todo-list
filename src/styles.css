@@ -1,0 +1,15 @@
+.list {
+  height: 600px;
+  overflow: auto;
+  width: 400px;
+  background-color: aliceblue;
+}
+
+.list li {
+  display: flex;
+  gap: 10px;
+}
+
+.taskText {
+  width: 100%;
+}

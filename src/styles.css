@@ -1,7 +1,6 @@
 html {
   box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 *,
@@ -12,13 +11,9 @@ html {
   padding: 0;
 }
 
-ul {
-  list-style: none;
-}
-
 @font-face {
   font-family: "Inter";
-  src: url("./fonts/Inter-Regular.woff2"), url("./fonts/Inter-Regular.woff");
+  src: url("../public/fonts/Inter-Regular.woff2"), url("../public/fonts/Inter-Regular.woff");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -26,7 +21,7 @@ ul {
 
 @font-face {
   font-family: "Inter";
-  src: url("./fonts/Inter-Bold.woff2"), url("./fonts/Inter-Bold.woff");
+  src: url("../public/fonts/Inter-Bold.woff2"), url("../public/fonts/Inter-Bold.woff");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -43,7 +38,6 @@ body,
 #root {
   height: 100%;
 }
-
 
 .wrapper {
   min-height: 100%;
@@ -62,81 +56,74 @@ body,
   gap: 10px;
 }
 
-h1 {
-  font-size: 2rem;
-}
-
 button {
   border: none;
   padding: 10px;
-  width: 70px;
   background-color: red;
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  width: 120px;
 }
 
 .addField {
   width: 100%;
-  height: 50px;
+  height: 40px;
   display: flex;
   gap: 10px;
 }
 
-input {
+.input {
   padding: 10px;
   width: 100%;
-  background-color: grey;
-  opacity: 0.2;
-  border-color: transparent;
+  background-color: rgb(120, 120, 120, .1);
+  border-style: none;
   border-radius: 5px;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border: solid 1px blue;
 }
 
 ::placeholder {
-  opacity: 1;
+  opacity: .5;
   font-family: Inter;
   font-size: 1rem;
 }
 
-.addButton {
-  width: 100px;
-}
-
-.list {
+.list-container {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 10px;
   max-height: 600px;
   overflow: auto;
 }
 
-
 .listItem {
   width: 100%;
+  border-bottom: 1px solid rgb(100, 100, 100, .3);
   display: flex;
-  background-color: lightgray;
-  border-radius: 5px;
+  align-items: center;
 }
 
 .taskText {
-  display: flex;
-  align-items: center;
   margin-left: 10px;
   overflow: auto;
   width: 100%;
 }
 
+.editButton,
 .deleteButton {
-  border-radius: 0 5px 5px 0;
-}
-
-.editButton {
-  border-radius: 5px 0 0 5px;
+  filter: opacity(0.5);
+  margin-left: 20px;
+  width: 20px;
   height: 50px;
-  background-color: green;
+  display: flex;
+  cursor: pointer;
 }
 
-.deleteAllButton {
-  width: 100px;
-}

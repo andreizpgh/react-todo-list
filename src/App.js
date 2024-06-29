@@ -3,12 +3,12 @@ import { useRef } from "react";
 
 function TasksList({ list, onEdit, onDelete }) {
   const listItems = list.map((string, i) => 
-    <li key={i}>
+    <li className="listItem" key={i}>
       <div className="taskText">{string}</div>
-      <button onClick={() => onEdit(i, prompt('Edit task:', list[i]))}>
+      <button className="editButton" onClick={() => onEdit(i, prompt('Edit task:', list[i]))}>
         Edit
       </button>
-      <button onClick={() => onDelete(i)}>
+      <button className="deleteButton" onClick={() => onDelete(i)}>
         Delete
       </button>
     </li>);
@@ -33,7 +33,7 @@ function Input({ onInput }) {
     inputRef.current.value = '';
   }
 
-  return <>
+  return <div className="addField">
     <input 
       className="input" 
       ref={inputRef}
@@ -42,8 +42,8 @@ function Input({ onInput }) {
       placeholder="+ Add task" 
       autoFocus
     />
-    <button onClick={handleClick}>Add Todo</button>
-  </>
+    <button className="addButton" onClick={handleClick}>Add Todo</button>
+  </div>
 }
 
 export default function TodoList() {
@@ -71,11 +71,11 @@ export default function TodoList() {
   }
 
   return (
-    <>
+    <div className="app">
       <h1 className="title">Todo List</h1>
       <Input onInput={handleInput} />
       <TasksList list={tasks} onEdit={handleEdit} onDelete={handleDelete} />
-      <button onClick={handleDeleteAll}>Delete All</button>
-    </>
+      <button className="deleteAllButton" onClick={handleDeleteAll}>Delete All</button>
+    </div>
   );
 }

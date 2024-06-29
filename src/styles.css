@@ -1,15 +1,142 @@
-.list {
-  height: 600px;
-  overflow: auto;
-  width: 400px;
-  background-color: aliceblue;
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
-.list li {
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-Regular.woff2"), url("./fonts/Inter-Regular.woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-Bold.woff2"), url("./fonts/Inter-Bold.woff");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  width: 600px;
+  max-height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  width: 70px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addField {
+  width: 100%;
+  height: 50px;
   display: flex;
   gap: 10px;
 }
 
-.taskText {
+input {
+  padding: 10px;
   width: 100%;
+  background-color: grey;
+  opacity: 0.2;
+  border-color: transparent;
+  border-radius: 5px;
+}
+
+::placeholder {
+  opacity: 1;
+  font-family: Inter;
+  font-size: 1rem;
+}
+
+.addButton {
+  width: 100px;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 600px;
+  overflow: auto;
+}
+
+
+.listItem {
+  width: 100%;
+  display: flex;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.taskText {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  overflow: auto;
+  width: 100%;
+}
+
+.deleteButton {
+  border-radius: 0 5px 5px 0;
+}
+
+.editButton {
+  border-radius: 5px 0 0 5px;
+  height: 50px;
+  background-color: green;
+}
+
+.deleteAllButton {
+  width: 100px;
 }

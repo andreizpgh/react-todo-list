@@ -1,31 +1,31 @@
 import { useState } from "react";
 import TasksList from "./TasksList";
-import Input from "./Input"
+import Input from "./Input";
 
 export default function TodoList() {
-  const [tasks, updateTasks] = useState([]);
+  const [tasks, setTasks] = useState([]);
 
   function handleInput(input) {
     const newTaskList = [...tasks, input];
-    updateTasks(newTaskList);
+    setTasks(newTaskList);
   }
 
   function handleEdit(i, input) {
     const newTaskList = [...tasks];
     if (input) {
       newTaskList[i] = input;
-      updateTasks(newTaskList);
+      setTasks(newTaskList);
     }
   }
 
   function handleDelete(i) {
     const newTaskList = [...tasks];
     newTaskList.splice(i, 1);
-    updateTasks(newTaskList);
+    setTasks(newTaskList);
   }
 
   function handleDeleteAll() {
-    updateTasks([]);
+    setTasks([]);
   }
 
   return (

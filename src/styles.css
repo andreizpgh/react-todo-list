@@ -13,7 +13,8 @@ html {
 
 @font-face {
   font-family: "Inter";
-  src: url("../public/fonts/Inter-Regular.woff2"), url("../public/fonts/Inter-Regular.woff");
+  src: url("../public/fonts/Inter-Regular.woff2"),
+    url("../public/fonts/Inter-Regular.woff");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -21,7 +22,8 @@ html {
 
 @font-face {
   font-family: "Inter";
-  src: url("../public/fonts/Inter-Bold.woff2"), url("../public/fonts/Inter-Bold.woff");
+  src: url("../public/fonts/Inter-Bold.woff2"),
+    url("../public/fonts/Inter-Bold.woff");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -78,7 +80,7 @@ button {
 .input {
   padding: 10px;
   width: 100%;
-  background-color: rgb(120, 120, 120, .1);
+  background-color: rgb(120, 120, 120, 0.1);
   border-style: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -90,7 +92,7 @@ button {
 }
 
 ::placeholder {
-  opacity: .5;
+  opacity: 0.5;
   font-family: Inter;
   font-size: 1rem;
 }
@@ -106,7 +108,7 @@ button {
 
 .listItem {
   width: 100%;
-  border-bottom: 1px solid rgb(100, 100, 100, .3);
+  border-bottom: 1px solid rgb(100, 100, 100, 0.3);
   display: flex;
   align-items: center;
 }
@@ -126,4 +128,3 @@ button {
   display: flex;
   cursor: pointer;
 }
-

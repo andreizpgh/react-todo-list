@@ -5,28 +5,28 @@ export default function Input({ onInput }) {
 
   function handleEnter(e) {
     const value = e.target.value;
-    if (e.key === 'Enter' && value.trim()) {
+    if (e.key === "Enter" && value.trim()) {
       onInput(value);
-      e.target.value = '';
+      e.target.value = "";
     }
   }
 
   function handleClick() {
     onInput(inputRef.current.value);
-    inputRef.current.value = '';
+    inputRef.current.value = "";
   }
 
   return (
     <div className="addField">
-      <input 
-        className="input" 
+      <input
+        className="input"
         ref={inputRef}
         maxLength={300}
-        onKeyDown={e => handleEnter(e)}
-        placeholder="... new task" 
+        onKeyDown={(e) => handleEnter(e)}
+        placeholder="... new task"
         autoFocus
       />
       <button onClick={handleClick}>Add Todo</button>
-  </div>
+    </div>
   );
 }
